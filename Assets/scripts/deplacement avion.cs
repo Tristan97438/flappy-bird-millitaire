@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class deplacement_tank : MonoBehaviour
+public class deplacement_avion : MonoBehaviour
 {
     Vector3 pos_depart;
     Vector3 cible;
@@ -8,13 +8,13 @@ public class deplacement_tank : MonoBehaviour
     void Start()
     {
         pos_depart = transform.position;
-        cible = new Vector3(-13,-3f,0);
+        cible = new Vector3(-13,3f,0);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, cible,3 * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, cible, 5 * Time.deltaTime);
         if(transform.position == cible)
         {
             transform .position = pos_depart;

@@ -7,7 +7,7 @@ public class CameraShake : MonoBehaviour
     public void start_shake()
     {
         float duration = 0.2f;
-        float magnitude = 0.2f;
+        float magnitude = 0.3f;
         StopAllCoroutines();
         StartCoroutine(shake_coroutine(duration, magnitude));
     }

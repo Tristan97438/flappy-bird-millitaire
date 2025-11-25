@@ -40,6 +40,14 @@ public class mortbird : MonoBehaviour
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
         score.GetComponent<score>().score_joueur = 0;
     }
+    public void exit()
+    {
+        Application.Quit();
+    }
+    public void quitter()
+    {
+
+    }
     public void OnTriggerEnter(Collider other)
     {
         if (mort_b == false)
