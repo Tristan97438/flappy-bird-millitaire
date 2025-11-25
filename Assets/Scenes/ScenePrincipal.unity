@@ -2102,7 +2102,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 369230990}
         m_TargetAssemblyTypeName: mortbird, Assembly-CSharp
-        m_MethodName: quitter
+        m_MethodName: exit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

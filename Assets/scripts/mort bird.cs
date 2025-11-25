@@ -44,10 +44,7 @@ public class mortbird : MonoBehaviour
     {
         Application.Quit();
     }
-    public void quitter()
-    {
-
-    }
+    
     public void OnTriggerEnter(Collider other)
     {
         if (mort_b == false)
