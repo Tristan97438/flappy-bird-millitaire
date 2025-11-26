@@ -71,6 +71,6 @@ public class mouvementbird : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 0, 20);
         yield return new WaitForSeconds(0.50f);
-        transform.rotation = Quaternion.Euler(0, 0, 0);
+        transform.rotation = Quaternion.Euler(0, 0, -10);
     }
 }

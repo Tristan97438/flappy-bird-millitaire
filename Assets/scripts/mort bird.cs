@@ -13,11 +13,13 @@ public class mortbird : MonoBehaviour
     [SerializeField] UnityEvent mort_bird;
     [SerializeField] GameObject canva , score;
     [SerializeField] TMPro.TextMeshProUGUI score_mort;
+    [SerializeField] GameObject cam;
+    Vector3 pos_cam;
     public bool mort_b;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        pos_cam = cam.transform.position;
         mort_b = false;
         rectTransform = GetComponent<Transform>();
         taille_normale = rectTransform.localScale;
@@ -35,6 +37,7 @@ public class mortbird : MonoBehaviour
     }
     public void restart()
     {
+        cam.transform.position = pos_cam;
         monde.Play();
         canva.SetActive(false);
         gameObject.transform.position = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
@@ -59,6 +62,7 @@ public class mortbird : MonoBehaviour
         mort_b = true;
         detruire_murs();
         mort_bird.Invoke();
+        
         while(transform.localScale.x < 1.5f)
         {
             changement_scale.x = transform.localScale.x +0.1f;
@@ -66,6 +70,7 @@ public class mortbird : MonoBehaviour
             transform.localScale = changement_scale;
             yield return new WaitForSeconds(0.1f);
         }
+        cam.transform.position = new Vector3(-24, 0, 0);
         canva.SetActive(true);
         transform.localScale = taille_normale;
         mort_b = false;
