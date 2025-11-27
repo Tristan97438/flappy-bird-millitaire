@@ -66,7 +66,7 @@ public class mortbird : MonoBehaviour
         while(transform.localScale.x < 1.5f)
         {
             changement_scale.x = transform.localScale.x +0.1f;
-            changement_scale.y = transform.localScale.x+0.1f;
+            changement_scale.y = transform.localScale.y+0.1f;
             transform.localScale = changement_scale;
             yield return new WaitForSeconds(0.1f);
         }
