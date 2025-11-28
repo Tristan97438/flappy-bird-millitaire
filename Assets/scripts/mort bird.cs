@@ -52,6 +52,11 @@ public class mortbird : MonoBehaviour
     {
         if (mort_b == false)
         StartCoroutine(mort());
+
+        if (other.CompareTag("missile"))
+        {
+            StartCoroutine(mort());
+        }
         
     }
     IEnumerator mort()
@@ -61,6 +66,7 @@ public class mortbird : MonoBehaviour
         mort_son.Play();
         mort_b = true;
         detruire_murs();
+        detruire_missile();
         mort_bird.Invoke();
         
         while(transform.localScale.x < 1.5f)
@@ -85,6 +91,19 @@ public class mortbird : MonoBehaviour
         {
             
             Destroy(mur);
+        }
+
+    }
+    private void detruire_missile()
+    {
+
+        GameObject[] mis = GameObject.FindGameObjectsWithTag("missile");
+
+
+        foreach (GameObject missi in mis)
+        {
+
+            Destroy(missi);
         }
 
     }

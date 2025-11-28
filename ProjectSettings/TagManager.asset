@@ -6,6 +6,9 @@ TagManager:
   tags:
   - mur
   - bird
+  - FxTemporaire
+  - missile
+  - score
   layers:
   - Default
   - TransparentFX
